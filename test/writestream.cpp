@@ -31,7 +31,9 @@ int main (int, char **argv)
 	std::string		user (UserInfo::self ()->id ());
 	std::string		path (std::string ("rfio:/castor/cern.ch/user/")
 			       	      + user[0] + "/" + user + "/rfiotest");
-    	Storage			*s = StorageFactory::get ()->open
+
+    StorageFactory::get ()->enableAccounting(true);
+    Storage			*s = StorageFactory::get ()->open
 	    (path.c_str (), IOFlags::OpenWrite | IOFlags::OpenCreate | IOFlags::OpenTruncate);
 	StorageStreamBuf	buf (s);
 	std::ostream		output (&buf);
@@ -48,6 +50,6 @@ int main (int, char **argv)
 	return EXIT_FAILURE;
     }
 
-    std::cerr << "stats:\n" << StorageAccount::summaryText ();
+    std::cerr << "stats:\n" << StorageAccount::summaryText () << std::endl;
     return EXIT_SUCCESS;
 }
