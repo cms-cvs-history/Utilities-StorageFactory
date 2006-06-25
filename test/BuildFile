@@ -1,5 +1,6 @@
 <use name=Utilities/StorageFactory>
 
+<bin file=t0Repack.cpp name=test_StorageFactory_t0Repack></bin>
 <bin file=randomread.cpp name=test_StorageFactory_randomread></bin>
 <bin file=any.cpp name=test_StorageFactory_Any></bin>
 <bin file=local.cpp name=test_StorageFactory_Local></bin>
