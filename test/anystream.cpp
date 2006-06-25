@@ -6,6 +6,7 @@
 #include "SealBase/DebugAids.h"
 #include "SealBase/Signal.h"
 #include <iostream>
+#include <iomanip>
 
 //<<<<<< PRIVATE DEFINES                                                >>>>>>
 //<<<<<< PRIVATE CONSTANTS                                              >>>>>>
@@ -38,7 +39,8 @@ int main (int argc, char **argv)
     Storage	*s = StorageFactory::get ()->open (argv [1]);
     StorageStreamBuf	buf (s);
     std::istream  in (&buf);
-
+    in.setf(std::ios::skipws);
+    std::cerr << in.good() << " " << in.width() << std::endl;
     while (in) {
       std::string word;
       in >> word;
