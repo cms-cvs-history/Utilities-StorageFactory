@@ -1,5 +1,6 @@
 <use name=Utilities/StorageFactory>
 
+<bin file=threadsafe.cpp name=test_StorageFactory_threadsafe></bin>
 <bin file=t0Repack.cpp name=test_StorageFactory_t0Repack></bin>
 <bin file=randomread.cpp name=test_StorageFactory_randomread></bin>
 <bin file=anystream.cpp name=test_StorageFactory_AnyStream></bin>
