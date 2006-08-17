@@ -37,15 +37,27 @@ int main (int argc, char **argv)
     if (! exists) return EXIT_SUCCESS;
 
     Storage	*s = StorageFactory::get ()->open (argv [1]);
-    StorageStreamBuf	buf (s);
-    std::istream  in (&buf);
-    in.setf(std::ios::skipws);
+    StorageStreamBuf	sbuf (s);
+    std::istream  in (&sbuf);
+    //in.setf(std::ios::skipws);
     std::cerr << in.good() << " " << in.width() << std::endl;
+    {
+      char	buf [1024];
+      IOSize	n;
+      while (in) {
+	in.read (buf, sizeof (buf));
+	n = in.gcount();
+	if (n==0) break; 
+	std::cout.write (buf, n);
+      }
+    }
+    /*
     while (in) {
       std::string word;
       in >> word;
       std::cout << word << " " ;
     }
+    */
     std::cout << std::endl;
     delete s;
 
