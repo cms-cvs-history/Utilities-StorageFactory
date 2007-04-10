@@ -2,7 +2,7 @@
 
 #include "Utilities/StorageFactory/interface/StorageFactory.h"
 #include "Utilities/StorageFactory/interface/StorageAccount.h"
-#include "PluginManager/PluginManager.h"
+#include "FWCore/PluginManager/interface/PluginManager.h"
 #include "SealZip/ZipArchive.h"
 #include "SealZip/ZipMember.h"
 #include "SealBase/Storage.h"
