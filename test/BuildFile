@@ -1,13 +1,9 @@
 <use name=Utilities/StorageFactory>
+<use name=FWCore/ParameterSet>
 
 <bin file=threadsafe.cpp name=test_StorageFactory_threadsafe></bin>
-<bin file=t0Repack.cpp name=test_StorageFactory_t0Repack>
-  <use name=Foundation/SealIOTools>
-</bin>
+<bin file=t0Repack.cpp name=test_StorageFactory_t0Repack></bin>
 <bin file=randomread.cpp name=test_StorageFactory_randomread></bin>
-<bin file=anystream.cpp name=test_StorageFactory_AnyStream>
-  <use name=Foundation/SealIOTools>
-</bin>
 <bin file=any.cpp name=test_StorageFactory_Any></bin>
 <bin file=local.cpp name=test_StorageFactory_Local></bin>
 <bin file=local2.cpp name=test_StorageFactory_Local2></bin>
@@ -21,16 +17,4 @@
 <bin file=rfio.cpp name=test_StorageFactory_Rfio></bin>
 <bin file=rfio2.cpp name=test_StorageFactory_Rfio2></bin>
 <bin file=rfio3.cpp name=test_StorageFactory_Rfio3></bin>
-<bin file=zip.cpp name=test_StorageFactory_Zip></bin>
-<bin file=zip2.cpp name=test_StorageFactory_Zip2></bin>
-<bin file=zip3.cpp name=test_StorageFactory_Zip3></bin>
-<bin file=ziplist.cpp name=test_StorageFactory_ZipList>
-  <use name=Foundation/SealZip>
-</bin>
-<bin file=rfzip.cpp name=test_StorageFactory_RfioZip></bin>
-<bin file=rfzip2.cpp name=test_StorageFactory_RfioZip2></bin>
-<bin file=rfzip3.cpp name=test_StorageFactory_RfioZip3></bin>
 <bin file=write.cpp name=test_StorageFactory_Write></bin>
-<bin file=writestream.cpp name=test_StorageFactory_WriteStream>
-  <use name=Foundation/SealIOTools>
-</bin>
