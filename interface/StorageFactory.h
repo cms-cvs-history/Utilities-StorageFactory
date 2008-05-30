@@ -20,7 +20,8 @@ public:
   bool		enableAccounting (bool enabled);
   Storage *	open (const std::string &url,
 	    	      int mode = IOFlags::OpenRead,
-	    	      const std::string &tmpdir = "");
+	    	      const std::string &tmpdir = "",
+                      int dcacheBufferSize = -1);
   bool		check (const std::string &url,
 	    	       IOOffset *size = 0);
 

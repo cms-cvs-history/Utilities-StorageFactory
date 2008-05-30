@@ -8,7 +8,8 @@ public:
   virtual Storage *open (const std::string &proto,
 			 const std::string &path,
 			 int mode,
-			 const std::string &tmpdir)
+			 const std::string &tmpdir,
+                         int dcacheBufferSize)
   {
     std::string temp;
     int         localfd = RemoteFile::local (tmpdir, temp);

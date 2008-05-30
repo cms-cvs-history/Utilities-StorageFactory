@@ -66,7 +66,10 @@ StorageFactory::getMaker (const std::string &url,
 }
    
 Storage *
-StorageFactory::open (const std::string &url, int mode, const std::string &tmpdir /* = "" */)
+StorageFactory::open (const std::string &url,
+                      int mode,
+                      const std::string &tmpdir /* = "" */,
+                      int dcacheBufferSize /* = -1 */)
 { 
   std::string protocol;
   std::string rest;
@@ -79,7 +82,7 @@ StorageFactory::open (const std::string &url, int mode, const std::string &tmpdi
       stats.reset(new StorageAccount::Stamp(StorageAccount::counter (protocol, "open")));
     try
     {
-      if (Storage *storage = maker->open (protocol, rest, mode, tmpdir))
+      if (Storage *storage = maker->open (protocol, rest, mode, tmpdir, dcacheBufferSize))
         ret = m_accounting ? new StorageAccountProxy (protocol, storage) : storage;
       if (stats) stats->tick();
     }

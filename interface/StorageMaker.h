@@ -15,7 +15,9 @@ public:
   virtual Storage *	open (const std::string &proto,
 			      const std::string &path,
 			      int mode,
-			      const std::string &tmpdir) = 0;
+			      const std::string &tmpdir,
+                              int dcacheBufferSize) = 0;
+
   virtual bool		check (const std::string &proto,
 			       const std::string &path,
 			       IOOffset *size = 0);
